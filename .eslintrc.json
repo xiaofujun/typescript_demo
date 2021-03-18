@@ -1,0 +1,30 @@
+{
+  "root": true,
+  // "extends": ["plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/recommended-requiring-type-checking"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/recommended-requiring-type-checking"],
+  "parser": "@typescript-eslint/parser",  // ESLint 使用 Espree 解析 JavaScript；解析 ts 时，需要使用 @typescript-eslint/parser 解析器进行解析
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    // "@typescript-eslint/rule-name": "error",
+    // "@typescript-eslint/array-type": "error",
+    // 禁止使用 var
+    "no-var": "error",
+    //禁止在块语句中使用声明（变量或函数）
+    "no-inner-declarations": ["off"],
+    // 优先使用 interface 而不是 type
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    // ts 中使用分号
+    "semi": "off",
+    "@typescript-eslint/semi": ["error"],
+    // ts 中使用引号
+    "quotes": "off",
+    "@typescript-eslint/quotes": ["error", "single"],
+    // ts 函数要有 return
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    // ts 使用 namespace 时报错
+    "@typescript-eslint/no-namespace": "off"
+  }
+}
